@@ -204,7 +204,7 @@ if __name__ == '__main__':
             NEW_POEM_ENG: [MessageHandler(filters.Regex("^(new poem|back to choose language)$"), new_poem_eng)],
 
         },
-        fallbacks=[CommandHandler("cancel", ask_for_lan)],
+        fallbacks=[CommandHandler("cancel", start), CommandHandler("start", start),],
     )
 
     application.add_handler(conv_handler)
